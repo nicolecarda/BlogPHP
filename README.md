@@ -1,72 +1,78 @@
 
-<<<<<<< HEAD
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<h1 class="Title" align="center"> BlogPHP </h1>
 
-## About Laravel
+## Index
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+*[Title](#title)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+*[Index](#index)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+*[Project Description](#project-description)
 
-## Learning Laravel
+*[Project Status](#project-status)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+*[App characteristics and demo](#App-characteristics-and-demo)
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Project Description
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<p dir="auto">BlogPHP is a blogger web page, created using different PHP, XAMPP and different libraries and frameworks, such as: </p>
+     <ol>
+        <li><a href="https://laravel.com/docs/11.x" target="_blank">Laravel</a></li>
+        <li><a href="https://jetstream.laravel.com/introduction.html" target="_blank">Jetstream</a></li>
+        <li><a href="https://www.phpmyadmin.net/" target="_blank">PHPMyAdmin</a></li>
+        <li><a href="https://vitejs.dev/" target="_blank">Vite</a></li>
+        <li><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+        <li><a href="https://alpinejs.dev/" target="_blank">Alpine.js</a></li>
+        <li><a href="https://laravel-livewire.com/" target="_blank">Livewire</a></li>
+        <li><a href="https://laravel.com" target="_blank">AdminLTE</a></li>
+        <li><a href="https://ckeditor.com/" target="_blank">CKEditor</a></li>
+        <li><a href="https://spatie.be/docs/laravel-permission/v6/introduction" target="_blank">Laravel Permission</a></li>
+     </ol>
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Project Status
 
-## Contributing
+<h4 align="center">
+:construction: Finished project, but more features can be added or improved :construction:
+</h4>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## :hammer:App characteristics and demo
 
-## Security Vulnerabilities
+- `Jetstream User Authentication`: Users can login or register in the web page; users that are not authenticated can see the blog's main page but can't access the Admin Panel.
+  
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+![autenticacion jetstream](https://github.com/nicolecarda/BlogPHP/assets/72530134/ee625c44-11eb-4dd8-9ba6-4112b3682560)
 
-## License
+  
+- `Blog Main Page`: In the main page of the blog, users can see diferent posts, with their image, tags and Category. There's also a menu that can be displayed on the right top of the page, for logging out or accesing the profile web page. Another menu is shown at the left top of the page with the post's tags, and another button that leads the user to the Admin Panel.
+  
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# BlogPHP
-Blog done using PHP, Jetstream, Laravel, Alpine and Livewire
->>>>>>> 35408ce328f7e0c0fc51ac12ab2e2bb55d7d19a0
+![blog home](https://github.com/nicolecarda/BlogPHP/assets/72530134/b5428749-7753-4613-8f05-d2edd04c81bc)
+
+
+- `Profile View`: In this page the user can modify some personal information, such as their name, email, password, delete their account, choose a two factor authentification, or manage and log out their active sessions on other browsers and devices.
+
+
+https://github.com/nicolecarda/BlogPHP/assets/72530134/34ed785a-ee9c-4444-a629-2581abf30dd3
+
+
+- `Admin Panel`: When the users click on the Admin Panel option, it's redirected to the post's list view, where they can see, create, update and delete posts. Also the Admin Panel is displayed. On the Admin Panel there are different buttons for being redirected to the main page, showing the users list, the roles list, the categories and tags lists, the posts list, and creating new posts.
+
+- `Users List`: In the users list view, users that have the permission can see all the user's IDs, names and emails that have been stored in the database. They can also choose to edit one user and change their name and assign them a role (admin, blogger or both).
+
+- `Roles List`: If users choose the roles list option, they will be redirected to the roles list, where they can create new roles, update the existing ones, or delete them.
+
+-  `Categories List`: In this view users can see the categories list, create a new category, update it or delete it.
+  
+-  `Tags List`:  In this view users can see the categories list, create a new category, update it or delete it.
+
+-  `Create New Post`: In this view, users can create a new post. They can write its name, and the slug of the post will be authomatically created. Then they can choose the post category, and its tags from the existing ones. They can also upload a picture and if they don't choose one, a default picture will be used for the post. Then they can write the post extract and body.
+  
+
+
