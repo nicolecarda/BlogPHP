@@ -24,16 +24,6 @@
 
                 @method('PUT') 
 
-                <div class="form-group" style="padding-left:7px">
-                    <label for="name">Name</label>
-                    <input class="form-control"  type="text" id="name" name="name" placeholder="Enter the role's name">
-                
-                @error('name')
-                    <span class="text-danger">{{$message}}</span>
-                @enderror
-                
-                </div>
-
                 <h2 class="h3">Permissions List</h2>
 
                 @foreach ($permissions as $permission)
