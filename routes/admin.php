@@ -17,4 +17,4 @@ Route::resource('roles', RoleController::class)->names('admin.roles');
 
 Route::resource('categories', CategoryController::class)->except('show')->names('admin.categories');
 Route::resource('tags', TagController::class)->except('show')->names('admin.tags');
-Route::resource('posts', PostController::class)->except('show')->names('admin.posts');
+Route::resource('posts', PostController::class)->names('admin.posts');
