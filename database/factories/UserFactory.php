@@ -24,7 +24,7 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition(): array  //returns an array with all the post fields made using faker library 
     {
         return [
             'name' => fake()->name(),

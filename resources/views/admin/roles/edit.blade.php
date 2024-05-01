@@ -1,3 +1,5 @@
+<!-- form for editing roles-->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -8,6 +10,8 @@
 
 
 @section('content')
+
+<!-- message shown if the category is updated ok -->
 
 @if (@session('info'))
 
@@ -37,7 +41,7 @@
                         @endforeach                   
                 </div>
 
-                
+                <!-- validation message for permission ID -->
 
                 @error('permission_id')
                 <br>

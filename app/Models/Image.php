@@ -10,9 +10,9 @@ class Image extends Model
     use HasFactory;
 
 
-    protected $fillable = ['url'];
+    protected $fillable = ['url']; //allows mass assignment for url
 
-    //relacion polimorfica
+    //polymorphic relationship betwwen images and tags
 
     public function imageable(){
         return $this->morphTo(Tag::class);

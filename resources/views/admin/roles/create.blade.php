@@ -1,3 +1,5 @@
+<!-- form for creating roles -->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -28,6 +30,7 @@
                 </div>
 
                 
+            <!-- validation message for permission ID -->
 
                 @error('permission_id')
                 <br>
@@ -43,52 +46,6 @@
         </div>
     </div>
 @stop
-
-@section('css')
-
-
-
-@stop
-
-@section('js')
-
-    <script src="{{ asset('jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
-    <script>
-            $(document).ready( function() {
-                $("#name").stringToSlug({
-                    setEvents: 'keyup keydown blur',
-                    getPut: '#slug',
-                    space: '-'
-                });
-            });
-
-            ClassicEditor
-        .create( document.querySelector( '#extract' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-
-        ClassicEditor
-        .create( document.querySelector( '#body' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-
-        document.getElementById("file").addEventListener('change', changeImage);
-           function changeImage(event){
-            var file = event.target.files[0];
-            var reader = new FileReader();
-            reader.onload = (event) => {
-                document.getElementById("picture").setAttribute('src', event.target.result);
-            };
-            reader.readAsDataURL(file);
-           }
-
-    </script>
-
-@endsection
-
 
 
  

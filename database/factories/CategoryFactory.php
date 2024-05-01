@@ -15,14 +15,14 @@ class CategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition(): array //returns an array with all the category fields made using faker library 
     {
 
-        $name = $this-> faker ->unique()->word(20);
+        $name = $this-> faker ->unique()->word(20); //faker library creates 20 categories with an unique name
 
         return [
             'name'=> $name,
-            'slug'=> Str::slug($name), //el slug reemplaza los espacios por guiones y transforma las mayusculas en minusculas
+            'slug'=> Str::slug($name), //the slug replaces spaces with hyphens and transforms uppercase letters into lowercase letters
 
         ];
     }

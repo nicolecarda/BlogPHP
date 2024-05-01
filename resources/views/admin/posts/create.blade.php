@@ -1,3 +1,5 @@
+<!-- form for creating posts -->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -18,6 +20,8 @@
                     <label for="name">Name</label>
                     <input class="form-control"  type="text" id="name" name="name" placeholder="Enter the post's name">
                 
+                    <!-- validation message for name -->
+
                 @error('name')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
@@ -29,7 +33,8 @@
                     <input class="form-control"  type="text" id="slug" name="slug" readonly>
                 </div>
 
-                 
+                 <!-- validation message for slug -->
+
                 @error('slug')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
@@ -42,6 +47,8 @@
                         @endforeach
                     </select>
                 </div>
+
+                <!-- validation message for category id -->
 
                 @error('category_id')
                 <span class="text-danger">{{$message}}</span>
@@ -60,6 +67,7 @@
                 </div>
 
                 
+                <!-- validation message for tag id -->
 
                 @error('tag_id')
                 <br>
@@ -78,12 +86,15 @@
                     </label>
                 </div>
 
-              
+              <!-- validation message for status -->
 
                 @error('status')
                 <br>
                 <span class="text-danger">{{$message}}</span>
                 @enderror
+
+
+                <!-- if the user doesn't choose an image, the default picture will be displayed-->
 
                 <div class="row mb-3">
                     <div class="col">
@@ -95,6 +106,9 @@
                         <div class="form-group">
                             <label for="file">Image that will be displayed in the post</label>
                             <input class="form-control-file"  type="file" id="file" name="file" accept="image/*">
+
+                        <!-- validation message for image file -->
+
                             @error('file')
                             <span class="text-danger">{{$message}}</span>
                             @enderror
@@ -110,6 +124,8 @@
                     <textarea class="form-control"  id="extract" name="extract"></textarea>
                 </div>
 
+                <!-- validation message for extract -->
+
                 @error('extract')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
@@ -119,6 +135,8 @@
                     <textarea class="form-control" id="body" name="body"></textarea>
                 </div>
                 
+                <!-- validation message for body -->
+
                 @error('body')
                 <span class="text-danger">{{$message}}</span>
                 @enderror
@@ -137,12 +155,12 @@
 <style>
     .image-wrapper {
         width: 100%;
-        height: auto; /* Mantén la altura automática para preservar la proporción de la imagen */
+        height: auto; 
     }
 
     .image-wrapper img {
-        width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-        height: auto; /* Mantiene la proporción de la imagen */
+        width: 100%; 
+        height: auto; 
     }
 </style>
 
@@ -153,6 +171,9 @@
     <script src="{{ asset('jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script>
     <script>
+
+        //script for creating the category slug authomatically
+
             $(document).ready( function() {
                 $("#name").stringToSlug({
                     setEvents: 'keyup keydown blur',
@@ -160,6 +181,9 @@
                     space: '-'
                 });
             });
+
+
+            //script for editing the extract and body from the posts
 
             ClassicEditor
         .create( document.querySelector( '#extract' ) )
@@ -172,6 +196,10 @@
         .catch( error => {
             console.error( error );
         } );
+
+
+
+        //script for choosing an image and show it in the post
 
         document.getElementById("file").addEventListener('change', changeImage);
            function changeImage(event){

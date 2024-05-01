@@ -11,7 +11,7 @@ class UserSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(): void  //creation of 9 users
     {
         User::create([
             'name'=> 'Nicole Carda',

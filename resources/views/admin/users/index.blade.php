@@ -1,3 +1,5 @@
+<!-- table for showing the users list -->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -8,7 +10,7 @@
 
 
 @section('content')
-    @livewire('admin.users-index')
+    @livewire('admin.users-index') <!-- display the livewire blade -->
 @stop
 
 

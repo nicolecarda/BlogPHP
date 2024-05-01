@@ -1,10 +1,10 @@
-<div>
+<!-- form for showing users list -->
 
     <div class='card'>
         <div class="card-header">
             <input  wire:model.live='search' type="text" class="form-control" placeholder="Enter the user's name or email">
         </div>
-        @if ($users->count())  
+        @if ($users->count())  {{-- checks if there are any users--}}
         <div class='card-body'>
             <table class='table table-striped'>
                 <thead>
@@ -30,6 +30,8 @@
             </table>
         
         </div>  
+
+         <!-- method for list pagination -->
         
         <div class="card-footer">
             {{$users->links()}}
@@ -38,4 +40,4 @@
         <div class="card-body">There's nothing registered</div>   
         @endif
     </div>
-</div>
+

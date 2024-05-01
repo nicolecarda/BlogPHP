@@ -27,6 +27,8 @@
 
         <br>
 
+         <!-- method for list pagination -->
+
         <div class="pagination" style ="mt-4">
             {{ $posts->links() }}
         </div>

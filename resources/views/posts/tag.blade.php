@@ -4,11 +4,16 @@
 
         <h1 class="uppercase text-center text-5xl font-bold">Tag: {{$tag->name}}</h1>
     
+         <!-- calls the post blade -->
+         
         @foreach ($posts as $post)
         <x-card-post :post='$post' />
         @endforeach
 
         <br>
+
+
+         <!-- method for list pagination -->
 
         <div class="mt-4">
             {{$posts->links()}}

@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
-        $posts = Post::factory(300)->create();
+        $posts = Post::factory(300)->create(); //create 300 posts
 
         foreach($posts as $post) {
             
@@ -25,9 +25,9 @@ class PostSeeder extends Seeder
                 'imageable_type' => Post::class
              ]);
     
-             $post-> tags()-> attach([ //relacionar cada post con dos tags al azar
-                rand(1, 4), //elegir un nro entre 1 y 4
-                rand(5, 8), //elegir un nro entre 5 y 8
+             $post-> tags()-> attach([ //relates one post with two random tags
+                rand(1, 4), //choose a number between 1 and 4
+                rand(5, 8), //choose a number between 5 and 8
              ]);
         }
 

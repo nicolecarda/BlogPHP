@@ -1,3 +1,5 @@
+<!-- form for creating tags -->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -18,6 +20,8 @@
                     <label for="name">Name</label>
                     <input class="form-control" style="width: 50%" type="text" id="name" name="name" placeholder="Enter the tag's name">
                 
+                     <!-- validation message for name-->
+
                 @error('name')
                     <span class="text-danger">{{$message}}</span>
                 @enderror
@@ -29,6 +33,7 @@
                     <input class="form-control" style="width: 50%"  type="text" id="slug" name="slug" placeholder="Enter the tag's slug" readonly>
                 </div>
                 
+                 <!-- validation message for slug-->
                  
                 @error('slug')
                     <span class="text-danger">{{$message}}</span>
@@ -57,11 +62,14 @@
     </div>
 @stop
 
-@section('js')
+@section('js')  
 
     <script src="{{ asset('jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
     
     <script>
+
+    /*script for creating the category slug authomatically*/
+
             $(document).ready( function() {
                 $("#name").stringToSlug({
                     setEvents: 'keyup keydown blur',

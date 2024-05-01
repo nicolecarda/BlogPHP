@@ -18,9 +18,9 @@ class PostFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition(): array  //returns an array with all the post fields made using faker library 
     {
-        $name = $this-> faker ->unique()->sentence();
+        $name = $this-> faker ->unique()->sentence();  
 
         return [
             'name'=> $name,

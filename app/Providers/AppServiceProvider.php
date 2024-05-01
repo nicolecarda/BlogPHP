@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Post::observe(PostObserver::class); //para que se borren las imagenes de la carpeta posts cuando se elimina un post
+        Post::observe(PostObserver::class); //when a post is deleted, the image is also deleted from the storage folder
     
     }
 

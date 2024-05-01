@@ -1,3 +1,5 @@
+<!-- form for editing tags -->
+
 @extends('adminlte::page')
 
 @section('title', 'Edit')
@@ -8,6 +10,8 @@
 
 
 @section('content')
+
+<!-- message shown if the category is updated ok -->
 
 @if (@session('info'))
 
@@ -30,6 +34,8 @@
                 <label for="name">Name</label>
                 <input class="form-control" style="width: 50%" type="text" id="name" name="name" value="{{ $tag->name }}">
             
+            <!-- validation message for name -->
+
             @error('name')
                 <span class="text-danger">{{$message}}</span>
             @enderror
@@ -41,6 +47,7 @@
                 <input class="form-control" style="width: 50%"  type="text" id="slug" name="slug" readonly value="{{ $tag->name }}">
             </div>
             
+            <!-- validation message for slug -->
              
             @error('slug')
                 <span class="text-danger">{{$message}}</span>
@@ -75,6 +82,9 @@
     <script src="{{ asset('jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
     
     <script>
+
+        /*script for creating the category slug authomatically*/
+        
             $(document).ready( function() {
                 $("#name").stringToSlug({
                     setEvents: 'keyup keydown blur',

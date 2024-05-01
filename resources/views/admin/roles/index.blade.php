@@ -1,3 +1,5 @@
+<!-- table for showing the roles list -->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -11,6 +13,8 @@
 
 @section('content')
 
+<!-- message shown if the category is created ok -->
+
 @if (@session('info'))
 
     <div class="alert alert-success">
@@ -21,7 +25,7 @@
 
 <div class="card">
 
-    @if ($roles->count())        {{-- cosulta si hay posts --}}
+    @if ($roles->count())        {{-- count checks if there are any posts --}}
    
     <div class="card-body">
         <table class="table table-striped">

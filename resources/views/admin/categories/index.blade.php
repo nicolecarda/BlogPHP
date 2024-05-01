@@ -1,3 +1,5 @@
+<!-- table for showing the categories list -->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -8,6 +10,8 @@
 
 
 @section('content')
+
+<!-- message shown if the category is created ok -->
 
 @if (@session('info'))
 
@@ -20,7 +24,7 @@
 
     <div class='card'>
         <div class='card-header'>
-            @can('admin.categories.create')
+            @can('admin.categories.create') <!-- can verifies if the user has access to the add category button -->
             <a class="btn btn-success btn-sm float-right" href="{{route('admin.categories.create')}}">Add Category</a>
             @endcan
             
@@ -40,12 +44,12 @@
                             <td>{{$category->id}}</td>
                             <td>{{$category->name}}</td>
                             <td width="10px">
-                                @can('admin.categories.edit')
+                                @can('admin.categories.edit') <!-- can verifies if the user has access to the edit button -->
                                 <a class="btn btn-primary btn-sm" href="{{route('admin.categories.edit', $category)}}">Edit</a>
                                 @endcan
                             </td>
                             <td width="10px">
-                                @can('admin.categories.destroy')
+                                @can('admin.categories.destroy') <!-- can verifies if the user has access to the delete category button -->
                                 <form action="{{route('admin.categories.destroy', $category)}}" method="POST">
                                     @csrf
                                     @method('delete')

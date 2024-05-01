@@ -10,7 +10,7 @@ use Spatie\Permission\Models\Permission;
 class RoleController extends Controller
 {
   
-    public function index()
+    public function index() //Index recovers all the information of the roles and show it in the view
     {
         $roles = Role::all();
 
@@ -18,22 +18,22 @@ class RoleController extends Controller
     }
 
   
-    public function create()
+    public function create() //Create recovers the permissions information, then returns it in the create view
     {
         $permissions = Permission::all();
 
         return view('admin.roles.create',compact('permissions'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request) //store recovers all the info from role; and redirects the user to edit view; if the role is created ok a message is shown
     {
-        $request->validate([
+        $request->validate([   //validates the name field
             'name'=>'required'
         ]);
 
         $role = Role::create($request->all());
 
-        $role->permissions()->sync($request->permissions);
+        $role->permissions()->sync($request->permissions); 
 
         return redirect()->route('admin.roles.edit',$role)->with('info', 'The role was created ok');
         
@@ -46,7 +46,7 @@ class RoleController extends Controller
     }
 
    
-    public function edit(Role $role)
+    public function edit(Role $role)  //edit recovers all the info from permissions and shows it in the edit view
     {
         $permissions = Permission::all();
 
@@ -54,7 +54,7 @@ class RoleController extends Controller
     }
 
     
-    public function update(Request $request, Role $role)
+    public function update(Request $request, Role $role) //update validates the name field, and redirects the user to the edit view; if the role is updated ok a message is shown
     {
         $request->validate([
             'name'=>'required'
@@ -66,7 +66,7 @@ class RoleController extends Controller
     }
 
     
-    public function destroy(Role $role)
+    public function destroy(Role $role) //destroy calls the delete method and redirects the user to the indx view; if the category is deleted ok a message is shown
     {
         $role->delete();
 

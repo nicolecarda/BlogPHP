@@ -1,3 +1,6 @@
+<!-- menu displayed on the right top of the page-->
+
+
 <nav x-data="{ open: false }" class="bg-gray-800" >
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
@@ -93,7 +96,7 @@
                 </form>
                 </div>
               </div>
-            </div>  <!-- si el usuario está autentificado se mostrara esto -->
+            </div>  <!-- if the user is authentified this will be displayed -->
             @else
 
             <div>

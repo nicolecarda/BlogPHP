@@ -14,10 +14,10 @@ class TagFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition(): array //returns an array with all the post fields made using faker library 
     {
 
-        $name = $this-> faker ->unique()->word(20);
+        $name = $this-> faker ->unique()->word(20); //faker library creates 20 tags with an unique name
 
         return [
             'name'=> $name,

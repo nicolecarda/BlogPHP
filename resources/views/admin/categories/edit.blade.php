@@ -1,3 +1,5 @@
+<!-- form for editing categories -->
+
 @extends('adminlte::page')
 
 @section('title', 'Edit')
@@ -8,6 +10,8 @@
 
 
 @section('content')
+
+<!-- message shown if the category is updated ok -->
 
 @if (@session('info'))
 
@@ -32,17 +36,21 @@
                 <label for="name">Name</label>
                 <input class="form-control" style="width: 50%" type="text" id="name" name="name" value="{{ $category->name }}">
             
+                <!-- validation message for name -->
+
             @error('name')
                 <span class="text-danger">{{$message}}</span>
             @enderror
             
             </div>
 
+
             <div class="form-group" style="padding-left:7px">
                 <label for="slug">Slug</label>
                 <input class="form-control" style="width: 50%"  type="text" id="slug" name="slug" readonly value="{{ $category->name }}">
             </div>
 
+            <!-- validation message for slug -->
              
             @error('slug')
                 <span class="text-danger">{{$message}}</span>
@@ -60,7 +68,7 @@
 </div>
 @stop
 
-@section('js')
+@section('js') <!-- script for creating the category slug authomatically-->
 
     <script src="{{ asset('jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
     

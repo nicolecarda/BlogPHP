@@ -10,7 +10,7 @@ class PostPolicy
 {
   use HandlesAuthorization;
 
-        public function author(User $user, Post $post) //para evitar que el usuario pueda modificar cualquier post de cualquier usuario
+        public function author(User $user, Post $post) //to prevent users from modifying posts from other users
         {
             if($user->id == $post->user_id){
                 return true;
@@ -19,8 +19,8 @@ class PostPolicy
             }
         }
 
-        public function published(? User $user, Post $post) //para evitar que el usuario pueda modificar un post draft
-        {                                                   //al hacer opcional el parametro user con el signo de pregunta, un usuario no loggueado puede ver los posts
+        public function published(? User $user, Post $post) //to prevent users from modifying draft posts
+        {                                                   //question tag makes the user parameter optional; this lets one user that is not logged to see the posts
             if($post->status == 2){
                 return true;
             }else{

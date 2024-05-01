@@ -1,10 +1,12 @@
+<!-- form for showing posts list -->
+
 <div class="card">
 
     <div class="card-header">
         <input wire:model.live='search' type="text" class="form-control" placeholder="Enter the posts' name">
     </div>
 
-    @if ($posts->count())        {{-- cosulta si hay posts --}}
+    @if ($posts->count())        {{-- checks if there are any posts--}}
    
     <div class="card-body">
         <table class="table table-striped">
@@ -38,6 +40,8 @@
     </div> 
 
     <br> 
+
+    <!-- method for list pagination -->
 
     <div class="card-footer" >
         {{$posts->links()}}

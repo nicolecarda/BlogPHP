@@ -14,9 +14,9 @@ class PostController extends Controller
 {
 
     use AuthorizesRequests;
-    public function index(){
+    public function index(){ //index recovers info from posts, paginate the list of posts, and returns the index view
 
-        if(request()->page){   //para que se muestre la cache de cada pagina
+        if(request()->page){   //for showing the cache of each page
             $key = "posts" . request()->page;
         }else{
             $key = "posts";
@@ -25,14 +25,14 @@ class PostController extends Controller
         if(Cache::has($key)){
             $posts = Cache::get($key);
         }else{
-            $posts = Post::where('status', 2)->latest('id') ->paginate(8);  //si no hay almacenada cache, se realiza la consulta a la BD
+            $posts = Post::where('status', 2)->latest('id') ->paginate(8);  //if there's no stored cache, the info is recovered from the BD
             Cache::put($key,$posts);
         };
        
         return view('posts.index', compact('posts'));
     }
 
-    public function show(Post $post){
+    public function show(Post $post){  //show checks if the post has the published status, paginates the published posts list and returns the show view
 
         $this->authorize('published', $post);
 
@@ -47,7 +47,7 @@ class PostController extends Controller
 
     }
 
-    public function category(Category $category){
+    public function category(Category $category){  //category recovers the relationship with published posts and then returns the posts category view
 
         $posts = Post::where('category_id', $category->id)
                     ->where('status', 2)
@@ -58,7 +58,7 @@ class PostController extends Controller
 
     }
 
-    public function tag(Tag $tag){
+    public function tag(Tag $tag){ //tag recovers the relationship with published posts and returns the posts tag view
 
         $posts = $tag->posts()
                     ->where('status', 2)

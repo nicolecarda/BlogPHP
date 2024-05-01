@@ -1,3 +1,5 @@
+<!-- form for editing users -->
+
 @extends('adminlte::page')
 
 @section('title', 'Edit')
@@ -8,6 +10,8 @@
 
 
 @section('content')
+
+<!-- message shown if the user is updated ok -->
 
 @if (@session('info'))
 
@@ -32,6 +36,8 @@
                 <label for="name">Name</label>
                 <input class="form-control" style="width: 50%" type="text" id="name" name="name" value="{{ $user->name }}">
             
+                  <!-- validation message for name -->
+
             @error('name')
                 <span class="text-danger">{{$message}}</span>
             @enderror
@@ -50,7 +56,7 @@
                     @endforeach                   
             </div>
 
-            
+              <!-- validation message for role ID -->
 
             @error('role_id')
             <br>
@@ -69,10 +75,6 @@
 </div>
 @stop
 
-@section('js')
 
-   
-
-@endsection
 
  

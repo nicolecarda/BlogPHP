@@ -9,14 +9,14 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug'];
+    protected $fillable = ['name', 'slug']; //allows mass assignment for name and slug fields
 
-    public function getRouteKeyName() //para que se coloque el slug en la url
+    public function getRouteKeyName() //showing the slug in the url
     {
         return 'slug';
     }
 
-    //Relación de uno a muchos
+    //one to many relationship with posts
 
     public function posts(){
         return $this->hasMany(Post::class);

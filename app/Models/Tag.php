@@ -8,21 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
 
-    protected $fillable = ['name', 'slug', 'color'];
-/* 
-    public function getRouteKeyName()
-    {
-        return 'tag';
-    }
- */
-public function getRouteKeyName() //para que se coloque el slug en la url
+    protected $fillable = ['name', 'slug', 'color']; //allows mass assignment for name, slug and color fields
+
+public function getRouteKeyName() //showing the slug in the url
 {
     return 'slug';
 }
 
     use HasFactory;
 
-    //Relación de muchos a muchos
+    //Many to many relationship with posts
 
     public function posts(){
         return $this->belongsToMany(Post::class);

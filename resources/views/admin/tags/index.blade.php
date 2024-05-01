@@ -1,3 +1,5 @@
+<!-- table for showing the tags list -->
+
 @extends('adminlte::page')
 
 @section('title', 'List')
@@ -11,6 +13,8 @@
 @stop
 
 @section('content')
+
+<!-- message shown if the tag is created ok -->
 
 @if (@session('info'))
 
@@ -38,12 +42,12 @@
                             <td>{{$tag->id}}</td>
                             <td>{{$tag->name}}</td>
                             <td width="10px">
-                                @can('admin.tags.edit')
+                                @can('admin.tags.edit') <!-- can verifies if the user has access to the edit button -->
                                 <a class="btn btn-primary btn-sm" href="{{route('admin.tags.edit', $tag)}}">Edit</a>
                                 @endcan
                             </td>
                             <td width="10px">
-                                @can('admin.tags.destroy')
+                                @can('admin.tags.destroy') <!-- can verifies if the user has access to the delete button -->
                                 <form action="{{route('admin.tags.destroy', $tag)}}" method="POST">
                                     @csrf
                                     @method('delete')
